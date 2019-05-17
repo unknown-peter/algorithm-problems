@@ -20,9 +20,11 @@ class Solution3 implements Solution {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         for (int i = 0; i < len; i++) {
-            Integer complementIndex = map.get(target - nums[i]);
-            if ((null != complementIndex) && (!complementIndex.equals(i))) {
-                return new int[] {complementIndex, i};
+            int complement = target - nums[i];
+            // 查找HashMap中是否已存有target-nums[i]的index值
+            // 此时nums[i]还未存储到HashMap，结果不会是同一个index的数字
+            if (map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
             }
 
             map.put(nums[i], i);
