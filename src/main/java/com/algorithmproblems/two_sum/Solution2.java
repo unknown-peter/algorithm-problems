@@ -23,7 +23,7 @@ class Solution2 implements Solution {
         }
         for (int i = 0; i < len; i++) {
             Integer complementIndex = map.get(target - nums[i]);
-            // 
+            // 结果不能是同一个index的数字
             if ((null != complementIndex) && (!complementIndex.equals(i))) {
                 return new int[] {i, complementIndex};
             }
