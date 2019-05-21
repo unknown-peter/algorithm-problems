@@ -5,25 +5,27 @@ package com.algorithmproblems.palindrome_number;
 
 class Solution1 implements Solution {
 
+    /**
+     * 将x翻转之后判断xrev和x是否相等，判断是否是回文
+     */
     @Override
     public boolean isPalindrome(int x) {
-        if (x < 0)
+        if ((x < 0) || (x % 10 == 0 && x != 0))
             return false;
 
-        int dividend = x;
-        int xrev = 0;
-        while (dividend != 0) {
-            int remainder = dividend % 10;
-            if (dividend < 10) {
-                xrev += remainder;
-            } else {
-                xrev = (xrev + remainder) * 10;
-                if (xrev < 0)
-                    return false;
-            }
-            dividend /= 10;
+        int remainder = x;
+        int rev = 0;
+        while (remainder != 0) {
+            int pop = remainder % 10;
+            remainder /= 10;
+            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7))
+                return false;
+            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8))
+                return false;
+            rev = rev * 10 + pop;
         }
-        if (x == xrev)
+
+        if (x == rev)
             return true;
         else
             return false;
