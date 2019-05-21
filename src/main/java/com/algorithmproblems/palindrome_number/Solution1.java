@@ -20,15 +20,10 @@ class Solution1 implements Solution {
             remainder /= 10;
             if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7))
                 return false;
-            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8))
-                return false;
             rev = rev * 10 + pop;
         }
-
-        if (x == rev)
-            return true;
-        else
-            return false;
+        
+        return x == rev;
     }
 
 }
