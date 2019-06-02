@@ -79,7 +79,7 @@ public class Tester {
         assertThat(actual, is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("your-method() pass unit test!");
+            LOGGER.debug("isPalindrome() pass unit test!");
         }
     }
 

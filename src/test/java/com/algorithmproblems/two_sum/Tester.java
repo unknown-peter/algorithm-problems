@@ -79,7 +79,7 @@ public class Tester {
         Object actual = solution.twoSum(para1, para2);
         assertThat(actual, is(equalTo(expected)));
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("your-method() pass unit test!");
+            LOGGER.debug("twoSum() pass unit test!");
         }
     }
 
