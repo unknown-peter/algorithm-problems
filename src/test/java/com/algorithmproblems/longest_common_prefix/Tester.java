@@ -50,7 +50,8 @@ public class Tester {
                 {new String[] {"dog", "racecar", "car"}, ""}, {new String[] {}, ""},
                 {new String[] {"flower", "flow", "flown"}, "flow"},
                 {new String[] {"flu", "fluent", "flute"}, "flu"},
-                {new String[] {"take", "", "taste"}, ""}});
+                {new String[] {"take", "", "taste"}, ""}, {new String[] {"fool", "f", "foot"}, "f"},
+                {new String[] {"fool", "d", "foot"}, ""}});
     }
 
     /**=========================== for each test case ============================== */
