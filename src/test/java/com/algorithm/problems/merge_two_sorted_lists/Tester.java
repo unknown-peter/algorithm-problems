@@ -3,27 +3,21 @@
  */
 package com.algorithm.problems.merge_two_sorted_lists;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import com.algorithm.util.ListNodeConvertClass;
+import com.ciaoshen.leetcode.util.ListNode;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ciaoshen.leetcode.util.ListNode;
-import com.algorithm.problems.merge_two_sorted_lists.Solution;
-import com.algorithm.problems.merge_two_sorted_lists.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -83,10 +77,10 @@ public class Tester {
     @Test
     public void test() {
 
-        Object actual = solution.mergeTwoLists(ConvertClass.stringToListNode(para1),
-                ConvertClass.stringToListNode(para2));
+        Object actual = solution.mergeTwoLists(ListNodeConvertClass.stringToListNode(para1),
+                ListNodeConvertClass.stringToListNode(para2));
 
-        assertThat(ConvertClass.listNodeToString((ListNode) actual), is(equalTo(expected)));
+        assertThat(ListNodeConvertClass.listNodeToString((ListNode) actual), is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("mergeTwoLists() pass unit test!");
@@ -97,50 +91,4 @@ public class Tester {
     @After
     public void tearDown() throws Exception {}
 
-}
-
-
-class ConvertClass {
-    public static int[] stringToIntegerArray(String input) {
-        input = input.trim();
-        input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) {
-            return new int[0];
-        }
-
-        String[] parts = input.split(",");
-        int[] output = new int[parts.length];
-        for (int index = 0; index < parts.length; index++) {
-            String part = parts[index].trim();
-            output[index] = Integer.parseInt(part);
-        }
-        return output;
-    }
-
-    public static ListNode stringToListNode(String input) {
-        // Generate array from the input
-        int[] nodeValues = stringToIntegerArray(input);
-
-        // Now convert that list into linked list
-        ListNode dummyRoot = new ListNode(0);
-        ListNode ptr = dummyRoot;
-        for (int item : nodeValues) {
-            ptr.next = new ListNode(item);
-            ptr = ptr.next;
-        }
-        return dummyRoot.next;
-    }
-
-    public static String listNodeToString(ListNode node) {
-        if (node == null) {
-            return "[]";
-        }
-
-        String result = "";
-        while (node != null) {
-            result += Integer.toString(node.val) + ",";
-            node = node.next;
-        }
-        return "[" + result.substring(0, result.length() - 1) + "]";
-    }
 }

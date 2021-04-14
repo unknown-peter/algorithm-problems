@@ -3,29 +3,20 @@
  */
 package com.algorithm.problems.same_tree;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Queue;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import com.algorithm.util.TreeNodeConvertClass;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ciaoshen.leetcode.util.TreeNode;
-import com.algorithm.problems.same_tree.Solution;
-import com.algorithm.problems.same_tree.Solution2;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -82,8 +73,8 @@ public class Tester {
     @Test
     public void test() {
 
-        Object actual = solution.isSameTree(ConvertClass.stringToTreeNode(para1),
-                ConvertClass.stringToTreeNode(para2));
+        Object actual = solution.isSameTree(TreeNodeConvertClass.stringToTreeNode(para1),
+                TreeNodeConvertClass.stringToTreeNode(para2));
 
         assertThat(actual, is(equalTo(expected)));
 
@@ -96,51 +87,4 @@ public class Tester {
     @After
     public void tearDown() throws Exception {}
 
-}
-
-
-class ConvertClass {
-    public static TreeNode stringToTreeNode(String input) {
-        input = input.trim();
-        input = input.substring(1, input.length() - 1);
-        if (input.length() == 0) {
-            return null;
-        }
-
-        String[] parts = input.split(",");
-        String item = parts[0];
-        TreeNode root = new TreeNode(Integer.parseInt(item));
-        Queue<TreeNode> nodeQueue = new LinkedList<>();
-        nodeQueue.add(root);
-
-        int index = 1;
-        while (!nodeQueue.isEmpty()) {
-            TreeNode node = nodeQueue.remove();
-
-            if (index == parts.length) {
-                break;
-            }
-
-            item = parts[index++];
-            item = item.trim();
-            if (!item.equals("null")) {
-                int leftNumber = Integer.parseInt(item);
-                node.left = new TreeNode(leftNumber);
-                nodeQueue.add(node.left);
-            }
-
-            if (index == parts.length) {
-                break;
-            }
-
-            item = parts[index++];
-            item = item.trim();
-            if (!item.equals("null")) {
-                int rightNumber = Integer.parseInt(item);
-                node.right = new TreeNode(rightNumber);
-                nodeQueue.add(node.right);
-            }
-        }
-        return root;
-    }
 }
