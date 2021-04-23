@@ -9,9 +9,6 @@ import java.util.Stack;
 
 class Solution3 implements Solution {
 
-    /**
-     * targetSum减去当前节点值，递归左右节点
-     */
     @Override
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
