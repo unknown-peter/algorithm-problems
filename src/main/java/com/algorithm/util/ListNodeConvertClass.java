@@ -34,6 +34,27 @@ public class ListNodeConvertClass {
         return dummyRoot.next;
     }
 
+    public static ListNode stringToListNode(String input, int pos) {
+        // Generate array from the input
+        int[] nodeValues = stringToIntegerArray(input);
+
+        // Now convert that list into linked list
+        ListNode dummyRoot = new ListNode(0);
+        ListNode ptr = dummyRoot;
+        for (int item : nodeValues) {
+            ptr.next = new ListNode(item);
+            ptr = ptr.next;
+        }
+        if (pos != -1) {
+            ListNode node = dummyRoot.next;
+            for (int i = 0; i < pos; i++) {
+                node = node.next;
+            }
+            ptr.next = node;
+        }
+        return dummyRoot.next;
+    }
+
     public static String listNodeToString(ListNode node) {
         if (node == null) {
             return "[]";
