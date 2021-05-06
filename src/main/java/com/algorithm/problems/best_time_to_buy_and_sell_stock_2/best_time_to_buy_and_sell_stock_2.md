@@ -1,4 +1,4 @@
-# 121. Best Time to Buy and Sell Stock
+# 122. Best Time to Buy and Sell Stock II
 
 You are given an array `prices` where `prices[i]` is the price of a given stock on the i^th^ day.
 
