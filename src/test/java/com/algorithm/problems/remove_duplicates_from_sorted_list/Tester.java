@@ -44,8 +44,11 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{"[1,1,2]", "[1,2]"}, {"[1,1,2,3,3]", "[1,2,3]"},
-                {"[1,2,3,4,5]", "[1,2,3,4,5]"}});
+        return Arrays.asList(new Object[][]{
+                {"[1,1,2]", "[1,2]"},
+                {"[1,1,2,3,3]", "[1,2,3]"},
+                {"[1,2,3,4,5]", "[1,2,3,4,5]"}
+        });
     }
 
     /**=========================== for each test case ============================== */

@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.maximum_subarray;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.maximum_subarray.Solution;
-import com.algorithm.problems.maximum_subarray.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,10 +42,15 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6},
-                {new int[] {1}, 1}, {new int[] {-2, 1}, 1}, {new int[] {-2, -3, -1, -5}, -1},
-                {new int[] {5, 3, 2, 4}, 14}, {new int[] {1, 1, 1, 1, -4, 3, -4}, 4},
-                {new int[] {-2, 1, -3, 4, -1, 2, 1, -7, 8}, 8}});
+        return Arrays.asList(new Object[][]{
+                {new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6},
+                {new int[]{1}, 1},
+                {new int[]{-2, 1}, 1},
+                {new int[]{-2, -3, -1, -5}, -1},
+                {new int[]{5, 3, 2, 4}, 14},
+                {new int[]{1, 1, 1, 1, -4, 3, -4}, 4},
+                {new int[]{-2, 1, -3, 4, -1, 2, 1, -7, 8}, 8}
+        });
     }
 
     /**=========================== for each test case ============================== */

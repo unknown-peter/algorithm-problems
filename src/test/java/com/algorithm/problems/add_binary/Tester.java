@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.add_binary;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.add_binary.Solution;
-import com.algorithm.problems.add_binary.Solution2;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,8 +42,13 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{"11", "1", "100"}, {"1010", "1011", "10101"},
-                {"0", "1", "1"}, {"1", "0", "1"}, {"101", "1001", "1110"}});
+        return Arrays.asList(new Object[][]{
+                {"11", "1", "100"},
+                {"1010", "1011", "10101"},
+                {"0", "1", "1"},
+                {"1", "0", "1"},
+                {"101", "1001", "1110"}
+        });
     }
 
     /**=========================== for each test case ============================== */

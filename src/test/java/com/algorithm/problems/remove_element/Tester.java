@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.remove_element;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.remove_element.Solution;
-import com.algorithm.problems.remove_element.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,12 +42,16 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{new int[] {3, 2, 2, 3}, 3, 2},
-                {new int[] {0, 1, 2, 2, 3, 0, 4, 2}, 2, 5}, {new int[] {}, 2, 0},
-                {new int[] {2, 2, 2, 2}, 2, 0}, {new int[] {1, 2, 3, 4}, 5, 4},
-                {new int[] {1, 3, 5, 2, 2, 2, 2, 2, 2}, 2, 3},
-                {new int[] {2, 2, 2, 2, 2, 2, 4, 6, 8}, 2, 3},
-                {new int[] {1, 3, 5, 2, 2, 2, 4, 6, 8, 2, 5, 7, 9, 2, 2, 2}, 2, 9}});
+        return Arrays.asList(new Object[][]{
+                {new int[]{3, 2, 2, 3}, 3, 2},
+                {new int[]{0, 1, 2, 2, 3, 0, 4, 2}, 2, 5},
+                {new int[]{}, 2, 0},
+                {new int[]{2, 2, 2, 2}, 2, 0},
+                {new int[]{1, 2, 3, 4}, 5, 4},
+                {new int[]{1, 3, 5, 2, 2, 2, 2, 2, 2}, 2, 3},
+                {new int[]{2, 2, 2, 2, 2, 2, 4, 6, 8}, 2, 3},
+                {new int[]{1, 3, 5, 2, 2, 2, 4, 6, 8, 2, 5, 7, 9, 2, 2, 2}, 2, 9}
+        });
     }
 
     /**=========================== for each test case ============================== */

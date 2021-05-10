@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.search_insert_position;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.search_insert_position.Solution;
-import com.algorithm.problems.search_insert_position.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,10 +42,14 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(
-                new Object[][] {{new int[] {1, 3, 5, 6}, 5, 2}, {new int[] {1, 3, 5, 6}, 2, 1},
-                        {new int[] {1, 3, 5, 6}, 7, 4}, {new int[] {1, 3, 5, 6}, 0, 0},
-                        {new int[] {1, 3, 5, 6}, 1, 0}, {new int[] {1, 3, 5, 6}, 6, 3}});
+        return Arrays.asList(new Object[][]{
+                {new int[]{1, 3, 5, 6}, 5, 2},
+                {new int[]{1, 3, 5, 6}, 2, 1},
+                {new int[]{1, 3, 5, 6}, 7, 4},
+                {new int[]{1, 3, 5, 6}, 0, 0},
+                {new int[]{1, 3, 5, 6}, 1, 0},
+                {new int[]{1, 3, 5, 6}, 6, 3}
+        });
     }
 
     /**=========================== for each test case ============================== */

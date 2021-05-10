@@ -1,9 +1,9 @@
 /**
- * Leetcode - symmetric_tree
+ * Leetcode - read_n_characters_given_read4
  */
-package com.algorithm.problems.symmetric_tree;
+package com.algorithm.problems.read_n_characters_given_read4;
 
-import com.algorithm.util.TreeNodeConvertClass;
+import com.algorithm.util.FileOperateClass;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -36,7 +36,7 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution2();
+        solution = new Solution1();
         // solution = new Solution2();
     }
 
@@ -53,10 +53,10 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-                {"[1,2,2,3,4,4,3]", true},
-                {"[1,2,2,3,4,3,4]", false},
-                {"[1,2,2,null,3,null,3]", false},
-                {"[2,3,3,4,5,5]", false}
+                {"abc", 4, 3},
+                {"abcde", 5, 5},
+                {"abcdABCD1234", 12, 12},
+                {"leetcode", 5, 5}
         });
     }
 
@@ -67,14 +67,16 @@ public class Tester {
      * You can change the type of parameters
      */
     private String para1;                       // parameter 1
-    private boolean expected;                    // parameter 3 (expected answer)
+    private int para2;                       // parameter 2
+    private int expected;                    // parameter 3 (expected answer)
 
     /**
      * This constructor must be provided to run parameterized test.
      */
-    public Tester(String para1, boolean expected) {
+    public Tester(String para1, int para2, int expected) {
         // initialize test parameters
         this.para1 = para1;
+        this.para2 = para2;
         this.expected = expected;
     }
 
@@ -91,12 +93,15 @@ public class Tester {
     @Test
     public void test() {
 
-        Object actual = solution.isSymmetric(TreeNodeConvertClass.stringToTreeNode(para1));
+        FileOperateClass file = new FileOperateClass(para1);
+        solution.setFile(file);
+        char[] buf = new char[para1.length()];
+        Object actual = solution.read(buf, para2);
 
         assertThat(actual, is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("isSymmetric() pass unit test!");
+            LOGGER.debug("read() pass unit test!");
         }
     }
 

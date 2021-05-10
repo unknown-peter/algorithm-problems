@@ -53,7 +53,10 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-                {"[3,9,20,null,null,15,7]", 3}, {"[1,null,2]", 2}, {"[]", 0}, {"[0]", 1}
+                {"[3,9,20,null,null,15,7]", 3},
+                {"[1,null,2]", 2},
+                {"[]", 0},
+                {"[0]", 1}
         });
     }
 

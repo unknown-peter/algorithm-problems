@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.roman_to_integer;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.roman_to_integer.Solution;
-import com.algorithm.problems.roman_to_integer.Solution3;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,8 +42,15 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{"III", 3}, {"IV", 4}, {"IX", 9}, {"LVIII", 58},
-                {"MCMXCIV", 1994}, {"CMCDXCXLIXIV", 1443}, {"MDCLXVI", 1666}});
+        return Arrays.asList(new Object[][]{
+                {"III", 3},
+                {"IV", 4},
+                {"IX", 9},
+                {"LVIII", 58},
+                {"MCMXCIV", 1994},
+                {"CMCDXCXLIXIV", 1443},
+                {"MDCLXVI", 1666}
+        });
     }
 
     /**=========================== for each test case ============================== */

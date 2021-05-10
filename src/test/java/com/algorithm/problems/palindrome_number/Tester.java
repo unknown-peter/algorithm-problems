@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.palindrome_number;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.palindrome_number.Solution;
-import com.algorithm.problems.palindrome_number.Solution2;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,8 +42,15 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{121, true}, {-121, false}, {10, false}, {0, true},
-                {-2147483648, false}, {2147483647, false}, {1234554321, true}});
+        return Arrays.asList(new Object[][]{
+                {121, true},
+                {-121, false},
+                {10, false},
+                {0, true},
+                {-2147483648, false},
+                {2147483647, false},
+                {1234554321, true}
+        });
     }
 
     /**=========================== for each test case ============================== */

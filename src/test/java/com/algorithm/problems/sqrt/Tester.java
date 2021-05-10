@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.sqrt;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.sqrt.Solution;
-import com.algorithm.problems.sqrt.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,8 +42,16 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{4, 2}, {8, 2}, {9, 3}, {125, 11}, {2147395599, 46339},
-                {0, 0}, {2147483647, 46340}, {2147395600, 46340}});
+        return Arrays.asList(new Object[][]{
+                {4, 2},
+                {8, 2},
+                {9, 3},
+                {125, 11},
+                {2147395599, 46339},
+                {0, 0},
+                {2147483647, 46340},
+                {2147395600, 46340}
+        });
     }
 
     /**=========================== for each test case ============================== */

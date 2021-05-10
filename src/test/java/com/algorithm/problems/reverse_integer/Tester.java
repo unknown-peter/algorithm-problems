@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.reverse_integer;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.reverse_integer.Solution;
-import com.algorithm.problems.reverse_integer.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,8 +42,16 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{123, 321}, {-123, -321}, {120, 21}, {0, 0},
-                {-2147483648, 0}, {2147483647, 0}, {1534236469, 0}, {-1212121212, -2121212121}});
+        return Arrays.asList(new Object[][]{
+                {123, 321},
+                {-123, -321},
+                {120, 21},
+                {0, 0},
+                {-2147483648, 0},
+                {2147483647, 0},
+                {1534236469, 0},
+                {-1212121212, -2121212121}
+        });
     }
 
     /**=========================== for each test case ============================== */

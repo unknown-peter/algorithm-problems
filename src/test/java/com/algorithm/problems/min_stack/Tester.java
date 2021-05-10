@@ -55,8 +55,6 @@ public class Tester {
                 {new String[]{"MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin"},
                         new int[][]{new int[]{}, new int[]{-2}, new int[]{0}, new int[]{-3}, new int[]{}, new int[]{}, new int[]{}, new int[]{}},
                         new Integer[]{null, null, null, null, -3, null, 0, -2}}
-                //{},     // test case 2 (init parameters below: {para1, para2, expected})
-                // {}      // test case 3 (init parameters below: {para1, para2, expected})
         });
     }
 

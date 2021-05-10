@@ -3,26 +3,19 @@
  */
 package com.algorithm.problems.plus_one;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.algorithm.problems.plus_one.Solution;
-import com.algorithm.problems.plus_one.Solution1;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -49,11 +42,14 @@ public class Tester {
     /** Initialize test cases */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][] {{new int[] {1, 2, 3}, new int[] {1, 2, 4}},
-                {new int[] {4, 3, 2, 1}, new int[] {4, 3, 2, 2}}, {new int[] {0}, new int[] {1}},
-                {new int[] {9, 9, 9}, new int[] {1, 0, 0, 0}},
-                {new int[] {2, 9, 9}, new int[] {3, 0, 0}},
-                {new int[] {5, 8, 9}, new int[] {5, 9, 0}}});
+        return Arrays.asList(new Object[][]{
+                {new int[]{1, 2, 3}, new int[]{1, 2, 4}},
+                {new int[]{4, 3, 2, 1}, new int[]{4, 3, 2, 2}},
+                {new int[]{0}, new int[]{1}},
+                {new int[]{9, 9, 9}, new int[]{1, 0, 0, 0}},
+                {new int[]{2, 9, 9}, new int[]{3, 0, 0}},
+                {new int[]{5, 8, 9}, new int[]{5, 9, 0}}
+        });
     }
 
     /**=========================== for each test case ============================== */
