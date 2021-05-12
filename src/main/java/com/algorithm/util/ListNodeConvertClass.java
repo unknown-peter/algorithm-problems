@@ -1,6 +1,8 @@
 package com.algorithm.util;
 
 import com.ciaoshen.leetcode.util.ListNode;
+import org.apache.commons.lang3.tuple.ImmutableTriple;
+import org.apache.commons.lang3.tuple.Triple;
 
 public class ListNodeConvertClass {
 
@@ -66,5 +68,41 @@ public class ListNodeConvertClass {
             node = node.next;
         }
         return "[" + result.substring(0, result.length() - 1) + "]";
+    }
+
+    public static Triple<ListNode, ListNode, ListNode> intersectionListNodes(int val, String listA, String listB,
+                                                                             int skipA, int skipB) {
+        if (val == 0) {
+            ListNode listNodeA = stringToListNode(listA);
+            ListNode listNodeB = stringToListNode(listB);
+            return new ImmutableTriple<>(listNodeA, listNodeB, null);
+        }
+
+        int[] listAValues = stringToIntegerArray(listA);
+        int[] listBValues = stringToIntegerArray(listB);
+        ListNode listADummyRoot = new ListNode(0);
+        ListNode listBDummyRoot = new ListNode(0);
+        ListNode ptrA = listADummyRoot;
+        ListNode ptrB = listBDummyRoot;
+        for (int i = 0; i < skipA; i++) {
+            ptrA.next = new ListNode(listAValues[i]);
+            ptrA = ptrA.next;
+        }
+        for (int i = 0; i < skipB; i++) {
+            ptrB.next = new ListNode(listBValues[i]);
+            ptrB = ptrB.next;
+        }
+        for (int i = skipA, j = skipB; i < listAValues.length && j < listBValues.length; i++, j++) {
+            ListNode intersectionNode = new ListNode(listAValues[i]);
+            ptrA.next = intersectionNode;
+            ptrA = ptrA.next;
+            ptrB.next = intersectionNode;
+            ptrB = ptrB.next;
+        }
+        ListNode node = listADummyRoot;
+        for (int i = 0; i <= skipA; i++) {
+            node = node.next;
+        }
+        return new ImmutableTriple<>(listADummyRoot.next, listBDummyRoot.next, node);
     }
 }
