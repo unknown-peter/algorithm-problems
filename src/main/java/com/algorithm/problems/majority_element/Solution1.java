@@ -18,6 +18,6 @@ class Solution1 implements Solution {
         for (Map.Entry<Integer, Integer> entry : numCountMap.entrySet()) {
             if (entry.getValue() > nums.length / 2) return entry.getKey();
         }
-        return 0;
+        return -1;
     }
 }
