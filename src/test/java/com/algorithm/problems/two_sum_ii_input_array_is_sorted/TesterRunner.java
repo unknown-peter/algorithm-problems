@@ -1,22 +1,24 @@
 /**
- * Leetcode - best_time_to_buy_and_sell_stock_2
+ * Leetcode - two_sum_2_input_array_is_sorted
  */
-package com.algorithm.problems.best_time_to_buy_and_sell_stock_2;
+package com.algorithm.problems.two_sum_ii_input_array_is_sorted;
 
 // basic util
-import java.util.*;
-import com.ciaoshen.leetcode.util.*;
-// leetcode-helper library
+
 import com.ciaoshen.leetcode.helper.PropertyScanner;
-// junit 
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-// log4j
-import org.apache.log4j.PropertyConfigurator;
-// slf4j
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
+
+// leetcode-helper library
+// junit
+// log4j
+// slf4j
 
 
 /**

@@ -1,7 +1,7 @@
 /**
  * Leetcode - pascals_triangle_2
  */
-package com.algorithm.problems.pascals_triangle_2;
+package com.algorithm.problems.pascals_triangle_ii;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
 /**
  * Leetcode - best_time_to_buy_and_sell_stock_2
  */
-package com.algorithm.problems.best_time_to_buy_and_sell_stock_2;
+package com.algorithm.problems.best_time_to_buy_and_sell_stock_ii;
 
 class Solution1 implements Solution {
 

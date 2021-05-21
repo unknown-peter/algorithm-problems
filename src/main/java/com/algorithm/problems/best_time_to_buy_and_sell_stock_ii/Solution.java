@@ -1,7 +1,7 @@
 /**
  * Leetcode - best_time_to_buy_and_sell_stock_2
  */
-package com.algorithm.problems.best_time_to_buy_and_sell_stock_2;
+package com.algorithm.problems.best_time_to_buy_and_sell_stock_ii;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

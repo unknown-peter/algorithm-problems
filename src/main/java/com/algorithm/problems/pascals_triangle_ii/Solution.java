@@ -1,15 +1,17 @@
 /**
- * Leetcode - two_sum_2_input_array_is_sorted
+ * Leetcode - pascals_triangle_2
  */
-package com.algorithm.problems.two_sum_2_input_array_is_sorted;
+package com.algorithm.problems.pascals_triangle_ii;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 interface Solution {
 
     // use this Object to print the log (call from slf4j facade)
     static Logger log = LoggerFactory.getLogger(Solution.class);
 
-    int[] twoSum(int[] numbers, int target);
+    List<Integer> getRow(int rowIndex);
 }

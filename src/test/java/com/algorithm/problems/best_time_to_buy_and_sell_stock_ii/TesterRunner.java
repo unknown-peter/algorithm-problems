@@ -1,11 +1,10 @@
 /**
- * Leetcode - two_sum_2_input_array_is_sorted
+ * Leetcode - best_time_to_buy_and_sell_stock_2
  */
-package com.algorithm.problems.two_sum_2_input_array_is_sorted;
+package com.algorithm.problems.best_time_to_buy_and_sell_stock_ii;
 
 // basic util
 import java.util.*;
-import com.ciaoshen.leetcode.util.*;
 // leetcode-helper library
 import com.ciaoshen.leetcode.helper.PropertyScanner;
 // junit 

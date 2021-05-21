@@ -1,7 +1,7 @@
 /**
- * Leetcode - two_sum_2_input_array_is_sorted
+ * Leetcode - pascals_triangle_2
  */
-package com.algorithm.problems.two_sum_2_input_array_is_sorted;
+package com.algorithm.problems.pascals_triangle_ii;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -52,9 +53,9 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-                {new int[]{2, 7, 11, 15}, 9, new int[]{1, 2}},
-                {new int[]{2, 3, 4}, 6, new int[]{1, 3}},
-                {new int[]{-1, 0}, -1, new int[]{1, 2}}
+                {3, Arrays.asList(1, 3, 3, 1)},
+                {0, Arrays.asList(1)},
+                {1, Arrays.asList(1, 1)}
         });
     }
 
@@ -64,17 +65,15 @@ public class Tester {
      * Parameters for each test (initialized in testcases() method)
      * You can change the type of parameters
      */
-    private int[] para1;                       // parameter 1
-    private int para2;                       // parameter 2
-    private int[] expected;                    // parameter 3 (expected answer)
+    private int para1;                       // parameter 1
+    private List<Integer> expected;                    // parameter 3 (expected answer)
 
     /**
      * This constructor must be provided to run parameterized test.
      */
-    public Tester(int[] para1, int para2, int[] expected) {
+    public Tester(int para1, List<Integer> expected) {
         // initialize test parameters
         this.para1 = para1;
-        this.para2 = para2;
         this.expected = expected;
     }
 
@@ -91,12 +90,12 @@ public class Tester {
     @Test
     public void test() {
 
-        Object actual = solution.twoSum(para1, para2);
+        Object actual = solution.getRow(para1);
 
         assertThat(actual, is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("twoSum() pass unit test!");
+            LOGGER.debug("getRow() pass unit test!");
         }
     }
 
