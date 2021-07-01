@@ -57,7 +57,8 @@ public class Tester {
                 {new int[]{0, 2, 3, 4, 6, 8, 9}, Arrays.asList("0", "2->4", "6", "8->9")},
                 {new int[]{}, Arrays.asList()},
                 {new int[]{-1}, Arrays.asList("-1")},
-                {new int[]{0}, Arrays.asList("0")}
+                {new int[]{0}, Arrays.asList("0")},
+                {new int[]{-2147483648, -2147483647, 2147483647}, Arrays.asList("-2147483648->-2147483647", "2147483647")},
         });
     }
 
