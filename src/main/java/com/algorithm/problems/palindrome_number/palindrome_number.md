@@ -21,4 +21,4 @@ Determine whether an integer is a palindrome. An integer is a palindrome when it
 
 **Follow up:**  
 
-Coud you solve it without converting the integer to a string?
+Could you solve it without converting the integer to a string?
