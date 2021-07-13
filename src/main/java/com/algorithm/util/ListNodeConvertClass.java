@@ -105,4 +105,13 @@ public class ListNodeConvertClass {
         }
         return new ImmutableTriple<>(listADummyRoot.next, listBDummyRoot.next, node);
     }
+
+    public static ListNode getNode(ListNode head, int val) {
+        ListNode p = head;
+        while (p != null) {
+            if (p.val == val) return p;
+            p = p.next;
+        }
+        return null;
+    }
 }
