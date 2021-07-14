@@ -9,10 +9,7 @@ class Solution1 implements Solution {
 
     @Override
     public void deleteNode(ListNode node) {
-        while (node.next != null) {
-            node.val = node.next.val;
-            if (node.next.next == null) node.next = null;
-            else node = node.next;
-        }
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 }
