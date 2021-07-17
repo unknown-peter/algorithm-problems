@@ -7,14 +7,18 @@ class Solution1 implements Solution {
 
     @Override
     public boolean isStrobogrammatic(String num) {
-        int len = num.length();
-        for (int i = 0; i < len / 2; i++) {
-            if ((num.charAt(i) == '6' && num.charAt(len - i - 1) != '9')
-                    || (num.charAt(i) == '9' && num.charAt(len - i - 1) != '6')
-                    || (num.charAt(i) == '0' && num.charAt(len - i - 1) != '0')
-                    || (num.charAt(i) == '1' && num.charAt(len - i - 1) != '1')
-                    || (num.charAt(i) == '8' && num.charAt(len - i - 1) != '8'))
-                return false;
+        int i = 0;
+        int j = num.length() - 1;
+        while (i <= j) {
+            if (num.charAt(i) == num.charAt(j)) {
+                if (num.charAt(i) != '0' && num.charAt(i) != '1' && num.charAt(i) != '8') return false;
+            } else {
+                if ((num.charAt(i) == '6' && num.charAt(j) != '9')
+                        || (num.charAt(i) == '9' && num.charAt(j) != '6'))
+                    return false;
+            }
+            i++;
+            j--;
         }
         return true;
     }

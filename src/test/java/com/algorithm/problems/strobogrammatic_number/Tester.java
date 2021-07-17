@@ -35,8 +35,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution1();
-        // solution = new Solution2();
+//        solution = new Solution1();
+        solution = new Solution2();
     }
 
     /**
@@ -56,6 +56,9 @@ public class Tester {
                 {"88", true},
                 {"962", false},
                 {"1698691", true},
+                {"23457", false},
+                {"18681", false},
+                {"18081", true}
         });
     }
 
