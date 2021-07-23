@@ -8,6 +8,7 @@ class Solution1 implements Solution {
     @Override
     public boolean isUgly(int n) {
         if (n <= 0) return false;
+
         int remain2;
         int remain3;
         int remain5;
