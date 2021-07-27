@@ -9,6 +9,11 @@ class Solution2 implements Solution {
 
     @Override
     public int closestValue(TreeNode root, double target) {
-        return 0;
+        int value = root.val;
+        while (root != null) {
+            if (Math.abs(root.val - target) < Math.abs(value - target)) value = root.val;
+            root = (root.val > target) ? root.left : root.right;
+        }
+        return value;
     }
 }

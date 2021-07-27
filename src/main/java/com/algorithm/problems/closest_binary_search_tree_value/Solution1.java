@@ -9,12 +9,9 @@ class Solution1 implements Solution {
 
     @Override
     public int closestValue(TreeNode root, double target) {
-        if (root == null) return Integer.MIN_VALUE;
-
-        int val;
-        double parentDistance = Math.abs(root.val - target);
-        if (root.val > target) val = closestValue(root.left, target);
-        else val = closestValue(root.right, target);
-        return (Math.abs(val - target) > parentDistance) ? root.val : val;
+        TreeNode nextNode = (root.val > target) ? root.left : root.right;
+        if (nextNode == null) return root.val;
+        int nextValue = closestValue(nextNode, target);
+        return (Math.abs(nextValue - target) > Math.abs(root.val - target)) ? root.val : nextValue;
     }
 }
