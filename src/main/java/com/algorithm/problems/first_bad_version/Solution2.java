@@ -14,7 +14,16 @@ class Solution2 implements Solution {
 
     @Override
     public int firstBadVersion(int n) {
-        return 0;
+        if (isBadVersion(1)) return 1;
+        return firstBadVersion(1, n);
+    }
+
+    private int firstBadVersion(int left, int right) {
+        if (left >= (right - 1)) return right;
+        int middle = left + (right - left) / 2;
+        if (isBadVersion(middle)) right = middle;
+        else left = middle;
+        return firstBadVersion(left, right);
     }
 
     private boolean isBadVersion(int version) {
