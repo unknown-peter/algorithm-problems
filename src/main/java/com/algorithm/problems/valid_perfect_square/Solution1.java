@@ -7,11 +7,8 @@ class Solution1 implements Solution {
 
     @Override
     public boolean isPerfectSquare(int num) {
-        int i = 1;
-        int square;
-        while ((square = i * i) <= num) {
-            if (square == num) return true;
-            i++;
+        for (int i = 1; i <= num / i; i++) {
+            if (i * i == num) return true;
         }
         return false;
     }
