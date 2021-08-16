@@ -16,5 +16,13 @@ class Solution2 implements Solution {
             square += i;
         }
         return false;
+
+//        int i = 1;
+//        while (num > 0) {
+//            num -= i;
+//            i += 2;
+//        }
+//        return num == 0;
+
     }
 }
