@@ -27,8 +27,6 @@ class Solution1 implements Solution {
     }
 
     private int guess(int num) {
-        if (pick == num) return 0;
-        if (pick < num) return -1;
-        else return 1;
+        return Integer.compare(pick, num);
     }
 }
