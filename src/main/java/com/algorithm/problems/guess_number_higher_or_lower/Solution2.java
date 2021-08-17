@@ -3,7 +3,7 @@
  */
 package com.algorithm.problems.guess_number_higher_or_lower;
 
-class Solution1 implements Solution {
+class Solution2 implements Solution {
 
     private int pick;
 
@@ -14,8 +14,15 @@ class Solution1 implements Solution {
 
     @Override
     public int guessNumber(int n) {
-        for (int i = 1; i <= n; i++)
-            if (guess(i) == 0) return i;
+        int left = 1;
+        int right = n;
+        while (left <= right) {
+            int middle = left + (right - left) / 2;
+            int result = guess(middle);
+            if (result == 0) return middle;
+            if (result == -1) right = middle - 1;
+            else if (result == 1) left = middle + 1;
+        }
         return -1;
     }
 
