@@ -13,10 +13,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -90,9 +89,10 @@ public class Tester {
     @Test
     public void test() {
 
-        Object actual = solution.readBinaryWatch(para1);
+        List<String> actual = solution.readBinaryWatch(para1);
 
-        assertThat(actual, is(equalTo(expected)));
+        assertTrue(actual.stream().sorted().collect(Collectors.joining())
+                .equals(expected.stream().sorted().collect(Collectors.joining())));
 
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("readBinaryWatch() pass unit test!");
