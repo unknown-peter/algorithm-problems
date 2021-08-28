@@ -4,7 +4,6 @@
 package com.algorithm.problems.binary_watch;
 
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.List;
 
 class Solution2 implements Solution {
@@ -24,15 +23,22 @@ class Solution2 implements Solution {
 
     private int getBits(int hour, int minute) {
         int time = (hour << 6) + minute;
-        BitSet bitSet = new BitSet(10);
-        int i = 0;
+        int count = 0;
         while (time != 0) {
-            if ((time & 0x00000001) == 0x00000001) {
-                bitSet.set(i);
-            }
-            time = time >> 1;
-            i++;
+            time = time & (time - 1);
+            count++;
         }
-        return bitSet.cardinality();
+        return count;
+
+//        BitSet bitSet = new BitSet(10);
+//        int i = 0;
+//        while (time != 0) {
+//            if ((time & 0x00000001) == 0x00000001) {
+//                bitSet.set(i);
+//            }
+//            time >>>= 1;
+//            i++;
+//        }
+//        return bitSet.cardinality();
     }
 }
