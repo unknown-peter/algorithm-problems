@@ -36,7 +36,7 @@ public class Tester {
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
 //        solution = new Solution1();
-        solution = new Solution2();
+        solution = new Solution4();
     }
 
     /**
@@ -57,7 +57,9 @@ public class Tester {
                 {"abcabcabcabc", true},
                 {"abcabcabc", true},
                 {"abcabcabcd", false},
-                {"aaaaaaa", true}
+                {"aaaaaaa", true},
+                {"ababab", true},
+                {"abcababcab", true}
         });
     }
 
