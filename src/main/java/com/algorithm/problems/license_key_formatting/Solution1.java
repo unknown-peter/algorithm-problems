@@ -3,6 +3,8 @@
  */
 package com.algorithm.problems.license_key_formatting;
 
+import org.apache.commons.lang3.StringUtils;
+
 class Solution1 implements Solution {
 
     @Override
@@ -19,7 +21,6 @@ class Solution1 implements Solution {
             }
         }
         String res = sb.reverse().toString();
-        if ("".equals(res)) return "";
-        return (res.charAt(0) == '-') ? res.substring(1) : res;
+        return (!StringUtils.isEmpty(res) && res.charAt(0) == '-') ? res.substring(1) : res;
     }
 }
