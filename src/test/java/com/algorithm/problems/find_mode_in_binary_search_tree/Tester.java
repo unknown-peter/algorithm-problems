@@ -32,8 +32,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution1();
-        // solution = new Solution2();
+//        solution = new Solution1();
+        solution = new Solution3();
     }
 
     /** Execute once after all of the test methods are executed in this class. */
@@ -45,7 +45,9 @@ public class Tester {
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
                 {"[1,null,2,2]", new int[]{2}},
-                {"[0]", new int[]{0}}
+                {"[0]", new int[]{0}},
+                {"[2,1,2,null,null,2,3,2,null,3,3]", new int[]{2}},
+                {"[2,1,2,null,null,2,3,null,null,3,3]", new int[]{2, 3}}
         });
     }
 
