@@ -13,6 +13,7 @@ class Solution2 implements Solution {
 
     @Override
     public List<Integer> preorder(Node root) {
+        if (root == null) return new ArrayList<>();
         List<Integer> resList = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
         stack.push(root);
