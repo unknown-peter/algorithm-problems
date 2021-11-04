@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-class Solution2 implements Solution {
+class Solution3 implements Solution {
 
     /**
-     * 利用栈进行前序遍历(注意子节点从前向后放入栈内)，将前序遍历的结果翻转之后即为后序遍历的结果
+     * 利用栈进行前序遍历(注意子节点从前向后放入栈内)，每次在List首位插入元素即为后序遍历的结果
      */
     @Override
     public List<Integer> postorder(Node root) {
@@ -22,19 +22,12 @@ class Solution2 implements Solution {
         stack.push(root);
         while (!stack.isEmpty()) {
             Node node = stack.pop();
-            resList.add(node.val);
+            resList.add(0, node.val);
             if (node.children != null) {
                 for (int i = 0; i < node.children.size(); i++) {
                     if (node.children.get(i) != null) stack.push(node.children.get(i));
                 }
             }
-        }
-        if (resList.size() == 1) return resList;
-        int n = resList.size();
-        for (int i = 0; i < n / 2; i++) {
-            int tmp = resList.get(i);
-            resList.set(i, resList.get(n - 1 - i));
-            resList.set(n - 1 - i, tmp);
         }
         return resList;
     }
