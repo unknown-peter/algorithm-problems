@@ -7,6 +7,11 @@ import java.util.Arrays;
 
 class Solution1 implements Solution {
 
+    /**
+     * 数组排序，遍历计算当前值的元素的数量到curCount，
+     * 如果下一个值与其相差1则preCount=curCount并遍历计算值的元素数量到curCount
+     * 如果preCount、curCount均不为0，则相加和sum取最大值
+     */
     @Override
     public int findLHS(int[] nums) {
         int preCount = 0;
