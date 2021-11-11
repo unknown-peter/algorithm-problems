@@ -3,6 +3,7 @@
  */
 package com.algorithm.problems.binary_watch;
 
+import com.algorithm.util.AssertClass;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -13,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;
 
@@ -91,8 +91,7 @@ public class Tester {
 
         List<String> actual = solution.readBinaryWatch(para1);
 
-        assertTrue(actual.stream().sorted().collect(Collectors.joining())
-                .equals(expected.stream().sorted().collect(Collectors.joining())));
+        assertTrue(AssertClass.isSameElementList(actual, expected));
 
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("readBinaryWatch() pass unit test!");
