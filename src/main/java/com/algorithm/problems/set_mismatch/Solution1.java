@@ -9,8 +9,8 @@ class Solution1 implements Solution {
     public int[] findErrorNums(int[] nums) {
         int[] res = new int[2];
         int[] count = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            count[nums[i] - 1]++;
+        for (int num : nums) {
+            count[num - 1]++;
         }
         for (int i = 0; i < count.length; i++) {
             if (count[i] == 2) res[0] = i + 1;

@@ -35,8 +35,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution1();
-        // solution = new Solution2();
+//        solution = new Solution1();
+        solution = new Solution3();
     }
 
     /**
@@ -57,6 +57,7 @@ public class Tester {
                 {new int[]{3, 2, 3, 4, 6, 5}, new int[]{3, 1}},
                 {new int[]{1, 5, 3, 2, 2, 7, 6, 4, 8, 9}, new int[]{2, 10}},
                 {new int[]{1, 4, 3, 2, 4}, new int[]{4, 5}},
+                {new int[]{1, 2, 2, 3, 5}, new int[]{2, 4}}
         });
     }
 
