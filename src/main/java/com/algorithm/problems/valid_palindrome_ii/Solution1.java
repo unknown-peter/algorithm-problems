@@ -7,24 +7,17 @@ class Solution1 implements Solution {
 
     @Override
     public boolean validPalindrome(String s) {
-        int i = 0;
-        int j = s.length() - 1;
-        int delNum = 0;
+        char[] str = s.toCharArray();
+        return isValid(str, 0, str.length - 1, 0);
+    }
+
+    private boolean isValid(char[] str, int i, int j, int count) {
+        if (count > 1) return false;
         while (i < j) {
-            if (s.charAt(i) == s.charAt(j)) {
-                i++;
-                j--;
-            } else {
-                if (delNum == 1) return false;
-                if ((i + 1) == j) return true;
-                if (s.charAt(i) == s.charAt(j - 1)) {
-                    j--;
-                    delNum++;
-                } else if (s.charAt(i + 1) == s.charAt(j)) {
-                    i++;
-                    delNum++;
-                } else return false;
-            }
+            if (str[i] != str[j])
+                return isValid(str, i, j - 1, count + 1) || isValid(str, i + 1, j, count + 1);
+            i++;
+            j--;
         }
         return true;
     }
