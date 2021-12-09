@@ -3,22 +3,19 @@
  */
 package com.algorithm.problems.degree_of_an_array;
 
-import java.util.*;
-import com.ciaoshen.leetcode.util.*;
-
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.After;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 public class Tester {
@@ -46,9 +43,8 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-            // {},     // test case 1 (init parameters below: {para1, para2, expected})
-            // {},     // test case 2 (init parameters below: {para1, para2, expected})
-            // {}      // test case 3 (init parameters below: {para1, para2, expected})
+                {new int[]{1, 2, 2, 3, 1}, 2},
+                {new int[]{1, 2, 2, 3, 1, 4, 2}, 6}
         });
     }
 
@@ -58,16 +54,14 @@ public class Tester {
      * Parameters for each test (initialized in testcases() method) 
      * You can change the type of parameters
      */
-    // private Object para1;                       // parameter 1
-    // private Object para2;                       // parameter 2
-    // private Object expected;                    // parameter 3 (expected answer)
+    private int[] para1;                       // parameter 1
+    private int expected;                    // parameter 3 (expected answer)
 
     /** This constructor must be provided to run parameterized test. */
-    public Tester(Object para1, Object para2, Object expected) {
+    public Tester(int[] para1, int expected) {
            // initialize test parameters
-    //     this.para1 = para1; 
-    //     this.para2 = para2;
-    //     this.expected = expected;
+        this.para1 = para1;
+        this.expected = expected;
     }
 
     /** Execute before each test method in this class is executed. */
@@ -77,14 +71,14 @@ public class Tester {
     /** Executed as a test case. */
     @Test
     public void test() {
-        //
-        // Object actual = solution.your-method(para1, para2);
-        //
-        // assertThat(actual, is(equalTo(expected)));
-        //
-        // if (LOGGER.isDebugEnabled()) {
-        //     LOGGER.debug("your-method() pass unit test!");
-        // }
+
+        Object actual = solution.findShortestSubArray(para1);
+
+        assertThat(actual, is(equalTo(expected)));
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("findShortestSubArray() pass unit test!");
+        }
     }
 
     /** Execute after each test method in this class is executed. */
