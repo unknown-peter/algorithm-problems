@@ -70,6 +70,24 @@ public class ListNodeConvertClass {
         return "[" + result.substring(0, result.length() - 1) + "]";
     }
 
+    public static String listNodeToString(ListNode node, int pos) {
+        if (node == null) {
+            return "[]";
+        }
+
+        String result = "";
+        ListNode cycleIn = node;
+        for (int i = 0; i < pos; i++) {
+            cycleIn = cycleIn.next;
+        }
+        while (node != null) {
+            result += Integer.toString(node.val) + ",";
+            node = node.next;
+            if (cycleIn.equals(node)) break;
+        }
+        return "[" + result.substring(0, result.length() - 1) + "]";
+    }
+
     public static Triple<ListNode, ListNode, ListNode> intersectionListNodes(int val, String listA, String listB,
                                                                              int skipA, int skipB) {
         if (val == 0) {
