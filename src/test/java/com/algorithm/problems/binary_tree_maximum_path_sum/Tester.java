@@ -1,10 +1,9 @@
 /**
- * Leetcode - linked_list_cycle_ii
+ * Leetcode - binary_tree_maximum_path_sum
  */
-package com.algorithm.problems.linked_list_cycle_ii;
+package com.algorithm.problems.binary_tree_maximum_path_sum;
 
-import com.algorithm.util.ListNodeConvertClass;
-import com.ciaoshen.leetcode.util.ListNode;
+import com.algorithm.util.TreeNodeConvertClass;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -54,11 +53,11 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-                {"[3,2,0,-4]", 1, "[2,0,-4]"},
-                {"[1,2]", 0, "[1,2]"},
-                {"[1]", -1, "[]"},
-                {"[1]", 0, "[1]"},
-                {"[1,2]", -1, "[]"}
+                {"[1,2,3]", 6},
+                {"[-10,9,20,null,null,15,7]", 42},
+                {"[2,-1]", 2},
+                {"[2,-1,-2]", 2},
+                {"[9,6,-3,null,null,-6,2,null,null,2,null,-6,-6,-6]", 16}
         });
     }
 
@@ -69,16 +68,14 @@ public class Tester {
      * You can change the type of parameters
      */
     private String para1;                       // parameter 1
-    private int para2;                       // parameter 2
-    private String expected;                    // parameter 3 (expected answer)
+    private int expected;                    // parameter 3 (expected answer)
 
     /**
      * This constructor must be provided to run parameterized test.
      */
-    public Tester(String para1, int para2, String expected) {
+    public Tester(String para1, int expected) {
         // initialize test parameters
         this.para1 = para1;
-        this.para2 = para2;
         this.expected = expected;
     }
 
@@ -95,12 +92,12 @@ public class Tester {
     @Test
     public void test() {
 
-        ListNode actual = solution.detectCycle(ListNodeConvertClass.stringToListNode(para1, para2));
+        Object actual = solution.maxPathSum(TreeNodeConvertClass.stringToTreeNode(para1));
 
-        assertThat(ListNodeConvertClass.listNodeToString(actual, 0), is(equalTo(expected)));
+        assertThat(actual, is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("detectCycle() pass unit test!");
+            LOGGER.debug("maxPathSum() pass unit test!");
         }
     }
 

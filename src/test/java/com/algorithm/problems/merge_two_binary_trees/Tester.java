@@ -97,7 +97,7 @@ public class Tester {
         assertThat(TreeNodeConvertClass.treeNodeToString(actual), is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("your-method() pass unit test!");
+            LOGGER.debug("mergeTrees() pass unit test!");
         }
     }
 
