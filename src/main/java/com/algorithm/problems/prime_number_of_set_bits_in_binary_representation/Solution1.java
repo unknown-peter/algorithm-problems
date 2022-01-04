@@ -11,17 +11,8 @@ class Solution1 implements Solution {
     public int countPrimeSetBits(int left, int right) {
         int count = 0;
         for (int i = left; i <= right; i++) {
-            if (numPrime[getNumberBits(i)]) count++;
+            if (numPrime[Integer.bitCount(i)]) count++;
         }
         return count;
-    }
-
-    private int getNumberBits(int num) {
-        int countBits = 0;
-        while (num != 0) {
-            if ((num & 1) == 1) countBits++;
-            num >>= 1;
-        }
-        return countBits;
     }
 }
