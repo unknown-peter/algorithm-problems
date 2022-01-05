@@ -1,4 +1,4 @@
-# Count digit number
+# ?. Count digit number
 
 计算从0到n的奇数或偶数中有多少个数字m
 
