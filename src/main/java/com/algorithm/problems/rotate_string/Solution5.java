@@ -9,7 +9,9 @@ class Solution5 implements Solution {
 
     /**
      * solution from leetcode
-     * KMP算法
+     * KMP算法，shifts数组保存当前字符不匹配时要向前回溯的距离
+     *     a b c a b d a b e
+     *   1 1 2 3 3 3 6 6 6 9
      */
     @Override
     public boolean rotateString(String A, String B) {

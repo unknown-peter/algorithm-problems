@@ -53,7 +53,8 @@ public class Tester {
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
                 {"abcde", "cdeab", true},
-                {"abcde", "abced", false}
+                {"abcde", "abced", false},
+                {"abcabbabe", "abcabdabe", false}
         });
     }
 
