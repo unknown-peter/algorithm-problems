@@ -5,8 +5,35 @@ package com.algorithm.problems.buddy_strings;
 
 class Solution2 implements Solution {
 
+    /**
+     * solution from leetcode
+     */
     @Override
     public boolean buddyStrings(String s, String goal) {
-        return false;
+        if (s.length() != goal.length()) return false;
+        if (s.equals(goal)) {
+            int[] count = new int[26];
+            for (int i = 0; i < s.length(); ++i)
+                count[s.charAt(i) - 'a']++;
+
+            for (int c : count)
+                if (c > 1) return true;
+            return false;
+        } else {
+            int first = -1, second = -1;
+            for (int i = 0; i < s.length(); ++i) {
+                if (s.charAt(i) != goal.charAt(i)) {
+                    if (first == -1)
+                        first = i;
+                    else if (second == -1)
+                        second = i;
+                    else
+                        return false;
+                }
+            }
+
+            return (second != -1 && s.charAt(first) == goal.charAt(second) &&
+                    s.charAt(second) == goal.charAt(first));
+        }
     }
 }
