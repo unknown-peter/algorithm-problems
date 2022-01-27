@@ -15,11 +15,8 @@ class Solution1 implements Solution {
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> root1List = getLeaf(root1);
         List<Integer> root2List = getLeaf(root2);
-        if (root1List.size() != root2List.size()) return false;
-        for (int i = 0; i < root1List.size(); i++) {
-            if (!root1List.get(i).equals(root2List.get(i))) return false;
-        }
-        return true;
+
+        return root1List.equals(root2List);
     }
 
     private List<Integer> getLeaf(TreeNode root) {
