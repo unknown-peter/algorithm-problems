@@ -8,7 +8,6 @@ into 1 or more groups of cards, where:
 - Each group has exactly `X` cards.
 - All the cards in each group have the same integer.
 
-
 **Example 1:**
 
     Input: deck = [1,2,3,4,4,3,2,1]
