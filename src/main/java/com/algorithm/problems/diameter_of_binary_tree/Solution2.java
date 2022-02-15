@@ -10,13 +10,13 @@ import java.util.Map;
 
 class Solution2 implements Solution {
 
-    private int result = Integer.MIN_VALUE;
+    private int result = 0;
 
     private Map<TreeNode, Integer> map = new HashMap<>();
 
     @Override
     public int diameterOfBinaryTree(TreeNode root) {
-        result = Integer.MIN_VALUE;
+        result = 0;
         map = new HashMap<>();
         treeHeight(root);
         return result;
