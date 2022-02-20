@@ -54,7 +54,8 @@ public class Tester {
         return Arrays.asList(new Object[][]{
                 {new int[]{1, 2, 3, 3}, 3},
                 {new int[]{2, 1, 2, 5, 3, 2}, 2},
-                {new int[]{5, 1, 5, 2, 5, 3, 5, 4}, 5}
+                {new int[]{5, 1, 5, 2, 5, 3, 5, 4}, 5},
+                {new int[]{9, 5, 6, 9}, 9}
         });
     }
 
