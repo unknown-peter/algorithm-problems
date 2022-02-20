@@ -27,6 +27,6 @@ Given a sequence of `words` written in the alien language, and the `order` of th
 **Constraints:**
 
 - `1 <= words.length <= 100`
-- `1 <= words[i].length <= 20`.
-- `order.length == 26`.
+- `1 <= words[i].length <= 20`
+- `order.length == 26`
 - All characters in `words[i]` and `order` are English lowercase letters.
