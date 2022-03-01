@@ -7,6 +7,7 @@ class Solution2 implements Solution {
 
     @Override
     public int findComplement(int num) {
+        if (num == 0) return 1;
         int mask = Integer.MAX_VALUE;
         while ((mask & num) != 0) mask <<= 1;
         return ~mask & ~num;
