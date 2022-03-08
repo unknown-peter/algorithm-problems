@@ -7,6 +7,13 @@ import com.ciaoshen.leetcode.util.TreeNode;
 
 class Solution3 implements Solution {
 
+    /**
+     * solution from leetcode
+     * Morris前序遍历
+     * 对二叉树从root左节点开始向下遍历其右节点直到右节点为null或为当前root
+     * 如果右节点为null，则设置右节点为当前root；如果右节点已经为当前root了，则说明当前root左边已遍历完，重置右节点为null并转向当前root右节点
+     * 过程中逐层计算currNumber，转向右节点时右移回退currNumber
+     */
     @Override
     public int sumRootToLeaf(TreeNode root) {
         int rootToLeaf = 0, currNumber = 0;
