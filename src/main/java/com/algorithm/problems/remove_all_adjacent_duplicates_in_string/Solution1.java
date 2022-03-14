@@ -5,6 +5,10 @@ package com.algorithm.problems.remove_all_adjacent_duplicates_in_string;
 
 class Solution1 implements Solution {
 
+    /**
+     * 定义char数组res和index i. 遍历s，当i!=0且res[i-1]等于当前字符ch时，有连续重复字符，i减一
+     * 否则res[i]=ch并且i加一
+     */
     @Override
     public String removeDuplicates(String s) {
         if (s.length() == 1) return s;
