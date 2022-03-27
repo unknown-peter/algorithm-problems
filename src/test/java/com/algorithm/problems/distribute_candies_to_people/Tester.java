@@ -35,8 +35,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution1();
-        // solution = new Solution2();
+//        solution = new Solution1();
+        solution = new Solution2();
     }
 
     /**
@@ -53,7 +53,8 @@ public class Tester {
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
                 {7, 4, new int[]{1, 2, 3, 1}},
-                {10, 3, new int[]{5, 2, 3}}
+                {10, 3, new int[]{5, 2, 3}},
+                {1000000000, 20, new int[]{50015276, 49979072, 49981308, 49983544, 49985780, 49988016, 49990252, 49992488, 49994724, 49996960, 49999196, 50001432, 50003668, 50005904, 50008140, 50010376, 50012612, 50014848, 50017084, 50019320}}
         });
     }
 
