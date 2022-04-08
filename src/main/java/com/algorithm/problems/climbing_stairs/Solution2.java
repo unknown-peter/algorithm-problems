@@ -11,8 +11,7 @@ class Solution2 implements Solution {
      */
     @Override
     public int climbStairs(int n) {
-        if (n <= 0)
-            throw new RuntimeException("invalid parameter");
+        if (n <= 0) return -1;
 
         int fn1 = 1, fn2 = 0;
         int fn = 0;

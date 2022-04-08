@@ -34,14 +34,13 @@ class Solution2 implements Solution {
                     romanValue = 1000;
                     break;
                 default:
-                    throw new RuntimeException("not roman symbol");
+                    return -1;
             }
             if (romanValue >= pre)
                 romanInt += romanValue;
             else if (romanValue * 10 >= pre)
                 romanInt -= romanValue;
-            else
-                throw new RuntimeException("wrong roman symbol order");
+            else return -1;
             pre = romanValue;
         }
         return romanInt;

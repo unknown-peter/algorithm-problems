@@ -10,11 +10,8 @@ class Solution1 implements Solution {
      */
     @Override
     public String countAndSay(int n) {
-        if (n < 1 || n > 30)
-            throw new RuntimeException("argument illegal");
-
-        if (n == 1)
-            return "1";
+        if (n < 1 || n > 30) return "";
+        if (n == 1) return "1";
 
         String preCountAndSay = countAndSay(n - 1);
         char[] seq = new char[preCountAndSay.length() * 2];

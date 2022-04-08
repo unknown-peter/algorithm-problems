@@ -11,9 +11,8 @@ class Solution2 implements Solution {
      */
     @Override
     public int count(int num, int digit, boolean isOdd) {
-        if ((num < 0) || (digit < 0) || (digit > 9)) {
-            throw new RuntimeException("argument illegal");
-        }
+        if ((num < 0) || (digit < 0) || (digit > 9)) return -1;
+
         if (digit == 0) {
             // TODO:
             return 0;

@@ -38,10 +38,10 @@ class Solution1 implements Solution {
                         return false;
                     break;
                 default:
-                    throw new RuntimeException("not bracket symbol");
+                    return false;
             }
         }
-        return (brackets.empty()) ? true : false;
+        return brackets.empty();
     }
 
 }

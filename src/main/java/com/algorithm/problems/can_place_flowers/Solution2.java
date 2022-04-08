@@ -5,7 +5,6 @@ package com.algorithm.problems.can_place_flowers;
 
 class Solution2 implements Solution {
 
-
     @Override
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int i = 0, count = 0;

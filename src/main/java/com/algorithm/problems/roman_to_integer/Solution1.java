@@ -29,15 +29,13 @@ class Solution1 implements Solution {
         int romanInt = 0;
         int pre = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
-            if (!romans.containsKey(s.charAt(i)))
-                throw new RuntimeException("not roman symbol");
+            if (!romans.containsKey(s.charAt(i))) return -1;
             int romanValue = romans.get(s.charAt(i));
             if (romanValue >= pre)
                 romanInt += romanValue;
             else if (romanValue * 10 >= pre)
                 romanInt -= romanValue;
-            else
-                throw new RuntimeException("wrong roman symbol order");
+            else return -1;
             pre = romanValue;
         }
         return romanInt;

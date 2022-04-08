@@ -8,6 +8,7 @@ import java.util.Map;
 
 
 class Solution2 implements Solution {
+
     /**
      * 使用HashMap存储数组 nums[i] -> i
      * 循环遍历数组，对数组i位置的nums[i]，获取target-nums[i]在HashMap中的值j，返回(i, j)

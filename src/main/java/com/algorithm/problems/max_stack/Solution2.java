@@ -7,7 +7,6 @@ import java.util.PriorityQueue;
 
 class Solution2 implements Solution {
 
-
     @Override
     public Integer[] stackOperate(String[] operate, int[][] data) {
         Integer[] result = new Integer[operate.length];

@@ -7,9 +7,8 @@ class Solution1 implements Solution {
 
     @Override
     public int count(int num, int digit, boolean isOdd) {
-        if ((num < 0) || (digit < 0) || (digit > 9)) {
-            throw new RuntimeException("argument illegal");
-        }
+        if ((num < 0) || (digit < 0) || (digit > 9)) return -1;
+
         int i = isOdd ? 1 : 0;
         int count = 0;
         for (; i <= num; i += 2) {

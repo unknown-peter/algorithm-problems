@@ -9,8 +9,7 @@ class Solution1 implements Solution {
 
     @Override
     public int[] plusOne(int[] digits) {
-        if (digits == null || digits.length == 0)
-            throw new RuntimeException("invalid parameter");
+        if (digits == null || digits.length == 0) return new int[0];
 
         int[] plusOne = new int[digits.length + 1];
         System.arraycopy(digits, 0, plusOne, 1, digits.length);
