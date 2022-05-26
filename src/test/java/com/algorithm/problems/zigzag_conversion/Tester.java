@@ -1,7 +1,7 @@
 /**
- * Leetcode - duplicate_zeros
+ * Leetcode - zigzag_conversion
  */
-package com.algorithm.problems.duplicate_zeros;
+package com.algorithm.problems.zigzag_conversion;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -35,8 +35,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-//        solution = new Solution1();
-        solution = new Solution2();
+        solution = new Solution1();
+        // solution = new Solution2();
     }
 
     /**
@@ -52,9 +52,9 @@ public class Tester {
     @Parameters
     public static Collection<Object[]> testcases() {
         return Arrays.asList(new Object[][]{
-                {new int[]{1, 0, 2, 3, 0, 4, 5, 0}, new int[]{1, 0, 0, 2, 3, 0, 0, 4}},
-                {new int[]{1, 2, 3}, new int[]{1, 2, 3}},
-                {new int[]{1, 0, 2, 3, 0, 0, 0, 0}, new int[]{1, 0, 0, 2, 3, 0, 0, 0}}
+                {"PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"},
+                {"PAYPALISHIRING", 4, "PINALSIGYAHRPI"},
+                {"A", 1, "A"}
         });
     }
 
@@ -64,15 +64,17 @@ public class Tester {
      * Parameters for each test (initialized in testcases() method)
      * You can change the type of parameters
      */
-    private int[] para1;                       // parameter 1
-    private int[] expected;                    // parameter 2 (expected answer)
+    private String para1;                       // parameter 1
+    private int para2;                       // parameter 2
+    private String expected;                    // parameter 3 (expected answer)
 
     /**
      * This constructor must be provided to run parameterized test.
      */
-    public Tester(int[] para1, int[] expected) {
+    public Tester(String para1, int para2, String expected) {
         // initialize test parameters
         this.para1 = para1;
+        this.para2 = para2;
         this.expected = expected;
     }
 
@@ -89,12 +91,12 @@ public class Tester {
     @Test
     public void test() {
 
-        solution.duplicateZeros(para1);
+        Object actual = solution.convert(para1, para2);
 
-        assertThat(para1, is(equalTo(expected)));
+        assertThat(actual, is(equalTo(expected)));
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("duplicateZeros() pass unit test!");
+            LOGGER.debug("convert() pass unit test!");
         }
     }
 
