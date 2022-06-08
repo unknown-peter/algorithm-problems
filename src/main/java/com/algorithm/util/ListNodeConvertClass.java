@@ -4,6 +4,9 @@ import com.ciaoshen.leetcode.util.ListNode;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.apache.commons.lang3.tuple.Triple;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNodeConvertClass {
 
     public static int[] stringToIntegerArray(String input) {
@@ -55,6 +58,22 @@ public class ListNodeConvertClass {
             ptr.next = node;
         }
         return dummyRoot.next;
+    }
+
+    public static ListNode[] stringToListNodeArray(String input) {
+        input = input.trim();
+        input = input.substring(1, input.length() - 1);
+
+        int left = 0;
+        List<ListNode> list = new ArrayList<>();
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '[') left = i;
+            else if (input.charAt(i) == ']') list.add(stringToListNode(input.substring(left, i + 1)));
+        }
+
+        ListNode[] arr = new ListNode[list.size()];
+        for (int i = 0; i < list.size(); i++) arr[i] = list.get(i);
+        return arr;
     }
 
     public static String listNodeToString(ListNode node) {
