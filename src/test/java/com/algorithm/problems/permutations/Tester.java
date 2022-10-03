@@ -1,12 +1,13 @@
 /**
- * Leetcode - minimum_index_sum_of_two_lists
+ * Leetcode - permutations
  */
-package com.algorithm.problems.minimum_index_sum_of_two_lists;
+package com.algorithm.problems.permutations;
 
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -39,8 +40,8 @@ public class Tester {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         /* uncomment to switch solutions */
-        solution = new Solution1();
-        // solution = new Solution2();
+        //        solution = new Solution1();
+        solution = new Solution2();
     }
 
     /**
@@ -55,12 +56,12 @@ public class Tester {
      */
     @Parameters
     public static Collection<Object[]> testcases() {
-        return Arrays.asList(new Object[][]{
-                {new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"}, new String[]{"Shogun"}},
-                {new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"KFC", "Shogun", "Burger King"}, new String[]{"Shogun"}},
-                {new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"KFC", "Burger King", "Tapioca Express", "Shogun"}, new String[]{"KFC", "Burger King", "Tapioca Express", "Shogun"}},
-                {new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"KNN", "KFC", "Burger King", "Tapioca Express", "Shogun"}, new String[]{"KFC", "Burger King", "Tapioca Express", "Shogun"}},
-                {new String[]{"KFC"}, new String[]{"KFC"}, new String[]{"KFC"}}
+        return Arrays.asList(new Object[][] {
+                {new int[] {1, 2, 3},
+                        Arrays.asList(Arrays.asList(1, 2, 3), Arrays.asList(1, 3, 2), Arrays.asList(2, 1, 3),
+                                Arrays.asList(2, 3, 1), Arrays.asList(3, 1, 2), Arrays.asList(3, 2, 1))},
+                {new int[] {0, 1}, Arrays.asList(Arrays.asList(0, 1), Arrays.asList(1, 0))},
+                {new int[] {1}, Arrays.asList(Arrays.asList(1))}
         });
     }
 
@@ -70,17 +71,15 @@ public class Tester {
      * Parameters for each test (initialized in testcases() method)
      * You can change the type of parameters
      */
-    private String[] para1;                       // parameter 1
-    private String[] para2;                       // parameter 2
-    private String[] expected;                    // parameter 3 (expected answer)
+    private int[] para1;                       // parameter 1
+    private List<List<Integer>> expected;                    // parameter 2 (expected answer)
 
     /**
      * This constructor must be provided to run parameterized test.
      */
-    public Tester(String[] para1, String[] para2, String[] expected) {
+    public Tester(int[] para1, List<List<Integer>> expected) {
         // initialize test parameters
         this.para1 = para1;
-        this.para2 = para2;
         this.expected = expected;
     }
 
@@ -97,12 +96,11 @@ public class Tester {
     @Test
     public void test() {
 
-        String[] actual = solution.findRestaurant(para1, para2);
+        List<List<Integer>> actual = solution.permute(para1);
 
-        assertTrue(AssertClass.isSameElementArray(actual, expected));
-
+        assertTrue(AssertClass.isSameElementListList(actual, expected));
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("findRestaurant() pass unit test!");
+            LOGGER.debug("permute() pass unit test!");
         }
     }
 

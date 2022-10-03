@@ -3,19 +3,24 @@
  */
 package com.algorithm.problems.binary_watch;
 
-import com.algorithm.util.AssertClass;
-import org.junit.*;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
-import static org.junit.Assert.assertTrue;
+import com.algorithm.util.AssertClass;
 
 @RunWith(Parameterized.class)
 public class Tester {
