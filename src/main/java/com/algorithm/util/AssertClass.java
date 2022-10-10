@@ -17,11 +17,29 @@ public class AssertClass {
                 .equals(Arrays.stream(expected).sorted().map(Objects::toString).collect(Collectors.joining()));
     }
 
-    public static <T> boolean isSameElementListList(List<List<T>> actual, List<List<T>> expected) {
+    public static <T> boolean isSameListList(List<List<T>> actual, List<List<T>> expected) {
         if (actual == null && expected == null) return true;
         if (actual == null || expected == null) return false;
         if (actual.size() != expected.size()) return false;
 
         return actual.containsAll(expected);
+    }
+
+    public static <T> boolean isSameElementListList(List<List<T>> actual, List<List<T>> expected) {
+        if (actual == null && expected == null) return true;
+        if (actual == null || expected == null) return false;
+        if (actual.size() != expected.size()) return false;
+
+        for (List<T> list : expected) {
+            boolean has = false;
+            for (List<T> actualList : actual) {
+                if (list.size() == actualList.size() && list.containsAll(actualList)) {
+                    has = true;
+                    break;
+                }
+            }
+            if (!has) return false;
+        }
+        return true;
     }
 }
